@@ -26,10 +26,10 @@ db.open(function(err, result) {
     data.write(firstDocData);
 
     var recordData = {
-      clusterId: clusterId,
-      content: data,
-      type: "d"
-    }
+        clusterId: clusterId,
+        content: data,
+        type: "d"
+    };
 
     console.log("Inserting 1st record...");
 
@@ -56,7 +56,7 @@ db.open(function(err, result) {
             var secondRecord = result.position;
 
             console.log("Created 2nd record on position: " + secondRecord);
-            assert(result.position == (firstRecord + 1));
+            assert(result.position === (firstRecord + 1));
 
             db.close();
         });
